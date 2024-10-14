@@ -1,8 +1,9 @@
-#token
-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
+ GIt token 
+
+ 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
 
 #url to password skip every time
-git remote set-url origin https://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@github.com/sampatirao/myweb.git
+git remote set-url origin https://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@github.com/sampatirao/myweb.git
 
 
 
