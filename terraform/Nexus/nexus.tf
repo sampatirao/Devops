@@ -2,8 +2,8 @@ provider "aws" {
   region = "eu-north-1"
 }
 
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+resource "aws_security_group" "allow_ssh_nexus" {
+  name        = "allow_ssh_nexus"
   description = "Allow SSH access"
 
   ingress {
@@ -39,7 +39,7 @@ resource "aws_instance" "nexus" {
   ami             = "ami-097c5c21a18dc59ea" # Replace with your AMI ID
   instance_type   = "c5.large"
   key_name        = "stockholm"
-  security_groups = [aws_security_group.allow_ssh.name]
+  security_groups = [aws_security_group.allow_ssh_nexus.name]
   availability_zone = "eu-north-1b"  # Specify the availability zone
 
   tags = {

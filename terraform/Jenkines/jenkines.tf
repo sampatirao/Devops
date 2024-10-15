@@ -1,8 +1,8 @@
 provider "aws" {
   region = "eu-north-1"
 }
-resource "aws_security_group" "allow_ssh" {
-  name        = "allow_ssh"
+resource "aws_security_group" "allow_ssh_jenkines" {
+  name        = "allow_ssh_jenkines"
   description = "Allow SSH access"
   
   ingress {
@@ -34,7 +34,7 @@ resource "aws_instance" "sampatirao" {
   ami           = "ami-097c5c21a18dc59ea"  
   instance_type = "t3.micro"
   key_name      = "stockholm"               
-  security_groups = [aws_security_group.allow_ssh.name]  # Associate the security group
+  security_groups = [aws_security_group.allow_ssh_jenkines.name]  # Associate the security group
 
   user_data = <<-EOF
               #!/bin/bash
